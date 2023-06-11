@@ -4,7 +4,7 @@ Node_Number::Node_Number(int value) {
     this->value = value;
     type = NUMBER;
     parent = nullptr;
-    visited = false;
+
 }
 
 Node_Number::~Node_Number() {

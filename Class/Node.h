@@ -11,11 +11,20 @@ class Node {
 #define NUMBER 3
 
 public:
-    Node();
-    ~Node();
     int type;
     Node *parent;
+    Node *left;
+    Node *right;
+
+    Node();
+    virtual ~Node();
+    
     int getType();
+    bool isOperation();
+    bool isVariable();
+    bool isNumber();
+    bool isHead();
+    bool isLeaf();
     virtual void print() = 0;
 };
 
