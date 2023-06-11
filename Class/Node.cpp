@@ -1,20 +1,14 @@
 #include "Node.h"
 
-Node::Node()
-{
+Node::Node() {
     type = INVALID;
+    parent = nullptr;
+    visited = false;
 }
 
-Node::~Node()
-{
+Node::~Node() {
 }
 
-int Node::get_type()
-{
-    return type;
-}
-
-void Node::print()
-{
-    std::cout << "Invalid node" << std::endl;
+void Node::print() {
+    std::cout << "Invalid Node" << std::endl;
 }

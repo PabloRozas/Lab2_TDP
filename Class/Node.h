@@ -1,24 +1,22 @@
-#ifndef NODE_H
-#define NODE_H
+#ifndef _NODE_H_
+#define _NODE_H_
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include <iostream>
 
-class Node
-{
-#define NUMBER 0
-#define OPERATOR 1
+class Node {
+
+#define INVALID 0
+#define OPERATION 1
 #define VARIABLE 2
-#define INVALID 3
+#define NUMBER 3
 
 public:
     Node();
     ~Node();
     int type;
-    int get_type();
+    Node *parent;
+    int getType();
     virtual void print() = 0;
 };
 
-#endif // NODE_H
+#endif
