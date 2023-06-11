@@ -9,3 +9,8 @@ NodeVariable.o: Class/Node_Variable.cpp Class/Node_Variable.h
 
 testNodeVariable: Tests/testNodeVariable.cpp NodeVariable.o Node.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
+
+
+clean:
+	rm -f *.o
+	rm -f testNodeVariable
