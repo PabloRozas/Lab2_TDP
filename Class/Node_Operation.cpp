@@ -28,6 +28,7 @@ bool Node_Operation::addParent(Node *parent) {
 
 void Node_Operation::print() {
     std::cout << "╔════════════════ Node Operation ════════════════" << std::endl;
+    std::cout << "║ »»This: " << this << std::endl;
     std::cout << "║ Operation: " << operation << std::endl;
     std::cout << "║ Type: " << type << std::endl;
     std::cout << "║ Parent: " << parent << std::endl;
