@@ -2,8 +2,10 @@
 
 class Node_Number : public Node {
     public:
+        int value;
+    
         Node_Number(int value);
         ~Node_Number();
-        int value;
+        bool addParent(Node *parent);
         void print();
 };

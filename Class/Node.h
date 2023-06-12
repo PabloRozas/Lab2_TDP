@@ -24,6 +24,7 @@ public:
     bool isHead();
     bool isLeaf();
     virtual void print() = 0;
+    virtual bool addParent(Node *parent) = 0;
 };
 
 #endif
