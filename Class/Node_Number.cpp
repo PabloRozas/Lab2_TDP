@@ -20,7 +20,7 @@ bool Node_Number::addParent(Node *parent) {
 
 void Node_Number::print() {
     std::cout << "╔════════════════ Node Number ════════════════" << std::endl;
-    std::cout << "║ »» This: " << this << std::endl;
+    std::cout << "║ »»This: " << this << std::endl;
     std::cout << "║ Value: " << value << std::endl;
     std::cout << "║ Type: " << type << std::endl;
     std::cout << "║ Parent: " << parent << std::endl;
