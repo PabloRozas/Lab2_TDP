@@ -24,6 +24,7 @@ bool Node_Variable::addParent(Node *parent) {
 
 void Node_Variable::print() {
     std::cout << "╔════════════════ Node Variable ════════════════" << std::endl;
+    std::cout << "║ »»This: " << this << std::endl;
     std::cout << "║ Name: " << name << std::endl;
     std::cout << "║ Type: " << type << std::endl;
     std::cout << "║ Parent: " << parent << std::endl;
