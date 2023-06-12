@@ -12,6 +12,8 @@ Node_Operation::Node_Operation(char operation, Node *left, Node *right) {
 Node_Operation::Node_Operation(char operation) {
     this->operation = operation;
     type = OPERATION;
+    left = nullptr;
+    right = nullptr;
 }
 
 Node_Operation::~Node_Operation() {
@@ -21,6 +23,24 @@ Node_Operation::~Node_Operation() {
 bool Node_Operation::addParent(Node *parent) {
     if (this->parent == nullptr) {
         this->parent = parent;
+        return true;
+    }
+    return false;
+}
+
+bool Node_Operation::addLeft(Node *left) {
+    if (this->left == nullptr) {
+        this->left = left;
+        this->left->addParent(this);
+        return true;
+    }
+    return false;
+}
+
+bool Node_Operation::addRight(Node *right) {
+    if (this->right == nullptr) {
+        this->right = right;
+        this->right->addParent(this);
         return true;
     }
     return false;

@@ -11,5 +11,7 @@ public:
     Node_Operation(char operation); // caso de no conocer hijos
     ~Node_Operation();
     bool addParent(Node *parent);
+    bool addLeft(Node *left);
+    bool addRight(Node *right);
     void print();
 };
