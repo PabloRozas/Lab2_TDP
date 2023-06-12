@@ -30,7 +30,7 @@ bool Node::isHead() {
 }
 
 bool Node::isLeaf() {
-    return left == nullptr && right == nullptr;
+    return  isVariable() || isNumber();
 }
 
 void Node::print() {

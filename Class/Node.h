@@ -13,8 +13,6 @@ class Node {
 public:
     int type;
     Node *parent;
-    Node *left;
-    Node *right;
 
     Node();
     virtual ~Node();
