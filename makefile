@@ -20,6 +20,9 @@ testNodeVariable: Tests/testNodeVariable.cpp NodeVariable.o Node.o
 testNodeOperation: Tests/testNodeOperation.cpp NodeOperation.o NodeNumber.o NodeVariable.o Node.o 
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+testNodeNumber: Tests/testNodeNumber.cpp NodeNumber.o Node.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 clean:
 	rm -f *.o
-	rm -f testNodeVariable testNodeOperation
+	rm -f testNodeVariable testNodeOperation testNodeNumber
