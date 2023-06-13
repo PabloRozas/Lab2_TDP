@@ -55,6 +55,9 @@ void Node_Operation::print() {
     std::cout << "║ Left: " << left << std::endl;
     std::cout << "║ Right: " << right << std::endl;
     std::cout << "╚════════════════ End  Operation ════════════════" << std::endl;
-    left->print();
-    right->print();
+    if (left != nullptr && right != nullptr)
+    {
+        left->print();
+        right->print();
+    }
 }
