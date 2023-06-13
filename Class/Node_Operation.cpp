@@ -30,8 +30,8 @@ bool Node_Operation::addParent(Node *parent) {
 
 bool Node_Operation::addLeft(Node *left) {
     if (this->left == nullptr) {
+        left->addParent(this);
         this->left = left;
-        this->left->addParent(this);
         return true;
     }
     return false;
@@ -39,8 +39,8 @@ bool Node_Operation::addLeft(Node *left) {
 
 bool Node_Operation::addRight(Node *right) {
     if (this->right == nullptr) {
+        right->addParent(this);
         this->right = right;
-        this->right->addParent(this);
         return true;
     }
     return false;
