@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -O2 
+CXXFLAGS = -Wall -O2 -g
 
 Node.o: Class/Node.cpp Class/Node.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -13,6 +13,9 @@ NodeOperation.o: Class/Node_Operation.cpp Class/Node_Operation.h
 NodeNumber.o: Class/Node_Number.cpp Class/Node_Number.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+File.o: Class/File.cpp Class/File.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 
 testNodeVariable: Tests/testNodeVariable.cpp NodeVariable.o Node.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
@@ -23,6 +26,9 @@ testNodeOperation: Tests/testNodeOperation.cpp NodeOperation.o NodeNumber.o Node
 testNodeNumber: Tests/testNodeNumber.cpp NodeNumber.o Node.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+testFile: Tests/testFile.cpp File.o Node.o NodeVariable.o NodeOperation.o NodeNumber.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 clean:
 	rm -f *.o
-	rm -f testNodeVariable testNodeOperation testNodeNumber
+	rm -f testNodeVariable testNodeOperation testNodeNumber testFile
