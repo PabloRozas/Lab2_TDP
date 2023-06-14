@@ -22,7 +22,9 @@ bool Node_Variable::addParent(Node *parent) {
     return false;
 }
 
-
+double Node_Variable::evaluate() const {
+    return static_cast<double>(name);
+}
 
 
 
