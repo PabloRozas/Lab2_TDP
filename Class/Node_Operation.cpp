@@ -46,7 +46,33 @@ bool Node_Operation::addRight(Node *right) {
     return false;
 }
 
-void Node_Operation::print() {
+double Node_Operation::evaluate() const {
+    if (left != nullptr && right != nullptr && left->type == NUMBER && right->type == NUMBER)
+    {
+        switch (operation)
+        {
+        case '+':
+            return left->evaluate() + right->evaluate();
+        case '-':
+            return left->evaluate() - right->evaluate();
+        case '*':
+            return left->evaluate() * right->evaluate();
+        case '/':
+            return left->evaluate() / right->evaluate();
+        case '^':
+            return pow(left->evaluate(), right->evaluate());
+        default:
+            return false;
+        }
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
+void Node_Operation::print() const {
     std::cout << "╔════════════════ Node Operation ════════════════" << std::endl;
     std::cout << "║ »»This: " << this << std::endl;
     std::cout << "║ Operation: " << operation << std::endl;

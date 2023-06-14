@@ -1,6 +1,6 @@
 #include "Node_Number.h"
 
-Node_Number::Node_Number(int value){
+Node_Number::Node_Number(double value){
     this->value = value;
     type = NUMBER;
     this->parent = nullptr;
@@ -18,7 +18,11 @@ bool Node_Number::addParent(Node *parent) {
     return false;
 }
 
-void Node_Number::print() {
+double Node_Number::evaluate() const {
+    return value;
+}
+
+void Node_Number::print() const{
     std::cout << "╔════════════════ Node Number ════════════════" << std::endl;
     std::cout << "║ »»This: " << this << std::endl;
     std::cout << "║ Value: " << value << std::endl;

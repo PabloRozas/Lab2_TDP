@@ -1,4 +1,5 @@
 #include "Node.h"
+#include <math.h>
 
 class Node_Operation : public Node {
 public:
@@ -13,5 +14,6 @@ public:
     bool addParent(Node *parent);
     bool addLeft(Node *left);
     bool addRight(Node *right);
-    void print();
+    double evaluate() const;
+    void print() const;
 };

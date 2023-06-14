@@ -2,10 +2,11 @@
 
 class Node_Number : public Node {
     public:
-        int value;
+        double value;
     
-        Node_Number(int value);
+        Node_Number(double value);
         ~Node_Number();
         bool addParent(Node *parent);
-        void print();
+        double evaluate() const;
+        void print() const;
 };

@@ -23,7 +23,8 @@ public:
     bool isNumber();
     bool isHead();
     bool isLeaf();
-    virtual void print() = 0;
+    virtual void print() const = 0;
+    virtual double evaluate() const = 0;
     virtual bool addParent(Node *parent) = 0;
 };
 

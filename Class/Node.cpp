@@ -33,6 +33,6 @@ bool Node::isLeaf() {
     return  isVariable() || isNumber();
 }
 
-void Node::print() {
+void Node::print() const {
     std::cout << "Invalid Node" << std::endl;
 }

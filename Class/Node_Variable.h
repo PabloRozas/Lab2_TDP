@@ -7,5 +7,6 @@ class Node_Variable : public Node {
         Node_Variable(char name);
         ~Node_Variable();
         bool addParent(Node *parent);
-        void print();
+        double evaluate() const;
+        void print() const;
 };
