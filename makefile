@@ -16,6 +16,9 @@ NodeNumber.o: Class/Node_Number.cpp Class/Node_Number.h
 File.o: Class/File.cpp Class/File.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+AST.o: Class/AST.cpp Class/AST.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 
 testNodeVariable: Tests/testNodeVariable.cpp NodeVariable.o Node.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
@@ -29,6 +32,9 @@ testNodeNumber: Tests/testNodeNumber.cpp NodeNumber.o Node.o
 testFile: Tests/testFile.cpp File.o Node.o NodeVariable.o NodeOperation.o NodeNumber.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+testAST: Tests/testAST.cpp AST.o File.o Node.o NodeVariable.o NodeOperation.o NodeNumber.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 clean:
 	rm -f *.o
-	rm -f testNodeVariable testNodeOperation testNodeNumber testFile
+	rm -f testNodeVariable testNodeOperation testNodeNumber testFile testAST
