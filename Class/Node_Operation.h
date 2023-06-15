@@ -7,17 +7,17 @@
 #include "Node_Number.h"
 #include "Node_Variable.h"
 
-/* 
+/*
     * Clase Node_Operation
     * Esta clase se encarga de representar un nodo de tipo operacion
     * Hereda de la clase Node
     * Contiene un atributo operation que representa el tipo de operacion
     * Contiene un atributo left que representa el hijo izquierdo
     * Contiene un atributo right que representa el hijo derecho
-*/
+ */
 
-
-class Node_Operation : public Node {
+class Node_Operation : public Node
+{
 public:
     Node *left;
     Node *right;
@@ -37,7 +37,7 @@ public:
 
     // Other methods
     double evaluate() const;
-    double evaluate(std::map<char, double>& variables) const;
+    double evaluate(std::map<char, double> &variables) const;
     void print() const;
 };
 

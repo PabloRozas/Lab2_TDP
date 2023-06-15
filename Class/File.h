@@ -16,24 +16,24 @@
 
 using namespace std;
 
-/* 
+/*
     * Clase File
     * Esta clase se encarga de leer el archivo de entrada y crear el arbol de sintaxis abstracta
-*/
+ */
 
+class File
+{
+public:
+    FILE *file;
+    stack<Node *> operaciones;
+    list<char> variables;
+    Node *head;
 
-class File {
-    public:
-        FILE *file;
-        stack<Node*> operaciones;
-        list<char> variables;
-        Node *head;
+    // Constructor
+    File(string filename);
 
-        // Constructor
-        File(string filename);
-
-        // Destructor
-        ~File();
+    // Destructor
+    ~File();
 };
 
 #endif

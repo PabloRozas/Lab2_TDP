@@ -11,32 +11,32 @@
 
 using namespace std;
 
-/* 
+/*
     * Clase AST
     * Esta clase se encarga de crear el arbol de sintaxis abstracta
     * y de realizar las operaciones de evaluar, simplificar, derivar e integrar
-*/
+ */
 
 class AST
 {
-    public:
-        Node *head;
-        stack<Node*> operaciones;
-        list<char> variables;
+public:
+    Node *head;
+    stack<Node *> operaciones;
+    list<char> variables;
 
-        // Constructor
-        AST(string filename);
+    // Constructor
+    AST(string filename);
 
-        // Destructor
-        ~AST();
- 
-        // Other methods
-        void value();
-        bool simplify();
-        bool integrate();
-        bool derive();
+    // Destructor
+    ~AST();
 
-        void print();
+    // Other methods
+    void value();
+    bool simplify();
+    bool integrate();
+    bool derive();
+
+    void print();
 };
 
 #endif
