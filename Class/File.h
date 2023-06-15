@@ -1,3 +1,6 @@
+#ifndef FILE_H
+#define FILE_H
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -13,12 +16,24 @@
 
 using namespace std;
 
-class File {
-    public:
-        FILE *file;
-        stack<Node*> operaciones;
-        list<char> variables;
-        Node *head;
-        File(string filename);
-        ~File();
+/*
+    * Clase File
+    * Esta clase se encarga de leer el archivo de entrada y crear el arbol de sintaxis abstracta
+ */
+
+class File
+{
+public:
+    FILE *file;
+    stack<Node *> operaciones;
+    list<char> variables;
+    Node *head;
+
+    // Constructor
+    File(string filename);
+
+    // Destructor
+    ~File();
 };
+
+#endif
