@@ -73,6 +73,42 @@ double Node_Variable::evaluate(std::map<char, double> &variables) const
 }
 
 /*
+    * Método derive de la clase Node_Variable
+    * Descripción: Se encarga de derivar el nodo
+    * Parametros:
+    * - variable: variable a derivar
+    * Retorno:
+    * - unique_ptr<Node>: puntero al nodo derivado
+ */
+
+unique_ptr<Node> Node_Variable::derive(const std::string& variable) const
+{
+    if (this->name == variable[0]) {
+        // La derivada de una variable con respecto a sí misma es 1
+        return std::make_unique<Node_Number>(1.0);
+    } 
+    else 
+    {
+        // La derivada de una variable distinta es 0
+        return std::make_unique<Node_Number>(0.0);
+    }
+}
+
+/*
+    * Método clone de la clase Node_Variable
+    * Descripción: Se encarga de clonar el nodo
+    * Parametros:
+    * - No posee
+    * Retorno:
+    * - unique_ptr<Node>: puntero al nodo clonado
+ */
+
+unique_ptr<Node> Node_Variable::clone() const
+{
+    return std::make_unique<Node_Variable>(name);
+}
+
+/*
     * Método print de la clase Node_Variable
     * Descripción: Se encarga de imprimir el nodo
     * Parametros:

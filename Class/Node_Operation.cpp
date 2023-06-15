@@ -140,6 +140,35 @@ double Node_Operation::evaluate(std::map<char, double> &variables) const
     }
 }
 
+std::unique_ptr<Node> Node_Operation::clone() const 
+{
+    return std::make_unique<Node_Operation>(operation, left->clone(), right->clone());
+}
+
+std::unique_ptr<Node> Node_Operation::derive(const std::string& variable)  const {
+        // Aplicamos la regla de la cadena para derivar la operación
+        std::unique_ptr<Node> leftDerivative = left->derive(variable);
+        std::unique_ptr<Node> rightDerivative = right->derive(variable);
+
+        switch (operation) {
+            case '+':
+                return std::make_unique<Node_Operation>('+', std::move(leftDerivative), std::move(rightDerivative));
+            case '*':
+                return std::make_unique<Node_Operation>(
+                    '+',
+                    std::make_unique<Node_Operation>('*', std::move(left->derive(variable)), std::move(right->clone())),
+                    std::make_unique<Node_Operation>('*', std::move(left->clone()), std::move(right->derive(variable)))
+                );
+            default:
+                std::cerr << "Operación no soportada: " << operation << std::endl;
+                return std::make_unique<Node_Number>(0.0);
+        }
+}
+
+
+
+
+
 /*
     * Método print de la clase Node_Operation
     * Descripción: Se encarga de imprimir el nodo

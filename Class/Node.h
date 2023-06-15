@@ -2,6 +2,7 @@
 #define _NODE_H_
 
 #include <iostream>
+#include <memory>
 #include <map>
 
 using namespace std;
@@ -44,6 +45,8 @@ public:
     bool isHead();
     virtual void print() const = 0;
     virtual double evaluate(std::map<char, double> &variables) const = 0;
+    virtual unique_ptr<Node> derive(const std::string& variable) const = 0;
+    virtual unique_ptr<Node> clone() const = 0;
 };
 
 #endif

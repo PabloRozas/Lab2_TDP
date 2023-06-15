@@ -63,6 +63,31 @@ double Node_Number::evaluate(std::map<char, double> &variables) const
     return value;
 }
 
+
+/*
+    * Metodo derive de la clase Node_Number
+    * Descripcion: Deriva el nodo
+    * Parametros:
+    *  - variable: variable respecto a la cual se deriva
+    * Retorno:
+    * - unique_ptr<Node>: puntero al nodo derivado
+ */
+
+std::unique_ptr<Node> Node_Number::derive(const std::string& variable) const 
+{
+    // La derivada de un número constante es siempre 0
+    return std::make_unique<Node_Number>(0.0);
+}
+
+
+unique_ptr<Node> Node_Number::clone() const
+{
+    return std::make_unique<Node_Number>(value);
+}
+
+
+
+
 /*
     * Metodo print de la clase Node_Number
     * Descripcion: Imprime el nodo

@@ -5,5 +5,6 @@ int main() {
     AST *ast = new AST("Resources/ejemplo1.txt");    
     ast->head->print();
     ast->value();
+    ast->derive('x');
     return 0;
 }

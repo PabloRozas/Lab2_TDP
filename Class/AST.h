@@ -34,7 +34,7 @@ public:
     void value();
     bool simplify();
     bool integrate();
-    bool derive();
+    bool derive(string variable);
 
     void print();
 };

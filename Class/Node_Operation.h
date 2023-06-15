@@ -38,6 +38,8 @@ public:
     // Other methods
     double evaluate() const;
     double evaluate(std::map<char, double> &variables) const;
+    unique_ptr<Node> derive(const std::string& variable) const;
+    unique_ptr<Node> clone() const;
     void print() const;
 };
 
