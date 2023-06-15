@@ -1,4 +1,9 @@
+#ifndef NODE_OPERATION_H
+#define NODE_OPERATION_H
+
 #include "Node.h"
+#include "Node_Number.h"
+#include "Node_Variable.h"
 #include <math.h>
 
 class Node_Operation : public Node {
@@ -15,5 +20,8 @@ public:
     bool addLeft(Node *left);
     bool addRight(Node *right);
     double evaluate() const;
+    double evaluate(std::map<char, double>& variables) const;
     void print() const;
 };
+
+#endif

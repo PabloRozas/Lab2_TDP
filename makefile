@@ -35,6 +35,9 @@ testFile: Tests/testFile.cpp File.o Node.o NodeVariable.o NodeOperation.o NodeNu
 testAST: Tests/testAST.cpp AST.o File.o Node.o NodeVariable.o NodeOperation.o NodeNumber.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+lab2: Utils/lab2.cpp AST.o File.o Node.o NodeVariable.o NodeOperation.o NodeNumber.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 clean:
 	rm -f *.o
-	rm -f testNodeVariable testNodeOperation testNodeNumber testFile testAST
+	rm -f testNodeVariable testNodeOperation testNodeNumber testFile testAST lab2

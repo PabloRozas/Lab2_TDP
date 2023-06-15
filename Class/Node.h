@@ -2,6 +2,7 @@
 #define _NODE_H_
 
 #include <iostream>
+#include <map>
 
 class Node {
 
@@ -24,7 +25,7 @@ public:
     bool isHead();
     bool isLeaf();
     virtual void print() const = 0;
-    virtual double evaluate() const = 0;
+    virtual double evaluate(std::map<char, double>& variables) const = 0;
     virtual bool addParent(Node *parent) = 0;
 };
 

@@ -18,7 +18,7 @@ bool Node_Number::addParent(Node *parent) {
     return false;
 }
 
-double Node_Number::evaluate() const {
+double Node_Number::evaluate(std::map<char, double>& variables) const {
     return value;
 }
 

@@ -35,9 +35,11 @@ File::File(string filename) {
                 Node_Variable *node = new Node_Variable(line[i]);
                 // Se agrega el nodo al vector
                 vectorExpression.push_back(node);
+                // Se agrega la variable a la lista
+                variables.push_front(line[i]);
             }
             // Se verifica si es un operador
-            else if (line[i] == '+' || line[i] == '-' || line[i] == '*' || line[i] == '/') {
+            else if (line[i] == '+' || line[i] == '-' || line[i] == '*' || line[i] == '^') {
                 // Se crea un nodo operacion
                 Node_Operation *node = new Node_Operation(line[i]);
                 // Se agrega el nodo al vector
@@ -138,4 +140,6 @@ File::File(string filename) {
  */
     
 
-    
+File::~File() {
+    delete head;
+}

@@ -3,6 +3,7 @@
 #include <string>
 #include <stack>
 #include <cstring>
+#include <list>
 #include <vector>
 
 #include "Node.h"
@@ -16,6 +17,7 @@ class File {
     public:
         FILE *file;
         stack<Node*> operaciones;
+        list<char> variables;
         Node *head;
         File(string filename);
         ~File();

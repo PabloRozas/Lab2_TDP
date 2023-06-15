@@ -22,8 +22,17 @@ bool Node_Variable::addParent(Node *parent) {
     return false;
 }
 
-double Node_Variable::evaluate() const {
-    return static_cast<double>(name);
+double Node_Variable::evaluate(std::map<char, double>& variables) const {
+    if (variables.find(name) != variables.end()) 
+    {
+            return variables[name];
+    } 
+    else 
+    {
+        // Manejo de variables no asignadas
+        std::cout << "Variable " << name << " no asignada" << std::endl;
+        return 0;
+    }
 }
 
 

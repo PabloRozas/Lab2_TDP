@@ -1,9 +1,9 @@
-#include "../Class/File.h"
+#include "../Class/AST.h"
 
 int main() {
     // Se le entrga como entrada el txt que se encuentra en la carpeta Resources con nombre ejemplo1.txt
-    File *file = new File("Resources/ejemplo1.txt");    
-    file->head->print();
-
+    AST *ast = new AST("Resources/ejemplo1.txt");    
+    ast->head->print();
+    ast->value();
     return 0;
 }

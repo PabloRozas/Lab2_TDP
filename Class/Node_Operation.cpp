@@ -46,28 +46,21 @@ bool Node_Operation::addRight(Node *right) {
     return false;
 }
 
-double Node_Operation::evaluate() const {
-    if (left != nullptr && right != nullptr && left->type == NUMBER && right->type == NUMBER)
-    {
-        switch (operation)
-        {
+double Node_Operation::evaluate(std::map<char, double>& variables) const {
+    double leftValue = left->evaluate(variables);
+    double rightValue = right->evaluate(variables);
+
+    switch (operation) {
         case '+':
-            return left->evaluate() + right->evaluate();
+            return leftValue + rightValue;
         case '-':
-            return left->evaluate() - right->evaluate();
+            return leftValue - rightValue;
         case '*':
-            return left->evaluate() * right->evaluate();
-        case '/':
-            return left->evaluate() / right->evaluate();
+            return leftValue * rightValue;
         case '^':
-            return pow(left->evaluate(), right->evaluate());
+            return pow(leftValue, rightValue);
         default:
-            return false;
-        }
-    }
-    else
-    {
-        return false;
+            return 0;
     }
 }
 
